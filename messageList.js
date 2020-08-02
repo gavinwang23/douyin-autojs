@@ -1,5 +1,8 @@
 console.show()
 
+//打开消息
+text("消息").findOne().parent().parent().parent().click()
+
 var FindMsgList = id('eo5').findOne(2000)
 console.log('查找完')
 

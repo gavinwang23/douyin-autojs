@@ -3,9 +3,15 @@ launchApp("抖音短视频")
 text("我").findOne().parent().parent().parent().click()
 text("密码登录").findOne().click()
 //勾选checkBox
-id("el2").findOne().click()
+id("duq").findOne().click()
 text("请输入手机号").findOne().setText("15205733272")
-id("e6s").findOne().setText("15205733272")
+id("dt2").findOne().setText("wjw990123")
+id("c0n").findOne().click()
+
+
+
+
+
 
 // //点击密码登录
 // console.log("点击密码登录")
