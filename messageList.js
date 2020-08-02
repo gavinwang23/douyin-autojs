@@ -1,9 +1,17 @@
 console.show()
 
 //打开消息
-text("消息").findOne().parent().parent().parent().click()
+//text("消息").findOne().parent().parent().parent().click()
 
-var FindMsgList = id('eo5').findOne(2000)
+var FindMsgList = id('eo5').find()
+var FindMsgListChild = [];
+console.log(FindMsgList)
+
+for(let i = 0;i<FindMsgList.size();i++){
+    FindMsgListChild[i] = FindMsgList.get[i]
+    console.log('找到:' + FindMsgListChild[i])
+}
+
 console.log('查找完')
 
 if(FindMsgList){
@@ -13,7 +21,3 @@ else if(!FindMsgList){
     console.log('没找到eo5')
 }
 
-id("eza").findOne().children().forEach(child => {
-    var target = child.findOne(id("eo5"));
-    target.click();
-    });
