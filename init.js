@@ -10,12 +10,12 @@ console.log("test")
 //点击密码登录
 console.log("点击密码登录")
 //id("d76").findOne(2000).click()
-text("密码登录").findOne(5000).parent().parent().click()
-sleep(1000)
+text("密码登录").findOne().parent().parent().click()
+sleep(5000)
 
 //输入手机号
 console.log("输入手机号")
-id("duq").findOne().setText("15205733272")
+id("duq").findOne().Text("15205733272")
 sleep(2000)
 
 //输入密码
