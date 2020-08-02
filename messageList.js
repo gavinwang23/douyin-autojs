@@ -1,15 +1,16 @@
 console.show()
 
 //打开消息
-//text("消息").findOne().parent().parent().parent().click()
+text("消息").findOne().parent().parent().parent().click()
 
 var FindMsgList = id('eo5').find()
 var FindMsgListChild = [];
-console.log(FindMsgList)
+console.log(FindMsgList.get(1).text())
+console.log(FindMsgList.size())
 
 for(let i = 0;i<FindMsgList.size();i++){
-    FindMsgListChild[i] = FindMsgList.get[i]
-    console.log('找到:' + FindMsgListChild[i])
+    FindMsgListChild[i] = FindMsgList.get(i).text()
+   console.log('找到:' + FindMsgListChild[i])
 }
 
 console.log('查找完')
