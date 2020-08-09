@@ -1,0 +1,23 @@
+{
+  "name": "douyin-auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinwang23/douyin-autojs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gavinwang23/douyin-autojs/issues"
+  },
+  "homepage": "https://github.com/gavinwang23/douyin-autojs#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-route": "^3.2.0"
+  }
+}
