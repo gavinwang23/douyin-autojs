@@ -6,12 +6,18 @@ var client= new net.Socket();
 // client.setEncoding('binary');
 //连接到服务端
 client.connect(port,host,function(){
-  client.write("caonimacaonimacaonimacaonimacaonimacaonimacoaniamldjfalkjdfl\r\n");
+  //client.write("成了\r\n");
   //向端口写入数据到达服务端
 });
 client.on('data',function(data){
   console.log('from server:'+ data);
   //得到服务端返回来的数据
+  if (data == "ding") {
+    client.write("dong\r\n");
+  } 
+  else {
+    client.write("\r\n");
+  }
 });
 client.on('error',function(error){
 //错误出现之后关闭连接

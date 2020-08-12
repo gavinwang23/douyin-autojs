@@ -35,12 +35,31 @@ message.findNameByHistoryList = function (name){
 }
 
 //发消息
-message.sendMessage = function (text){
-    text("发送消息…").findOne().setText(text)
+message.sendMessage = function (text1){
+    text("发送消息…").findOne().setText(text1)
     console.log("ok")
     sleep(3000)
     console.log("点击发送")
     click(665,1241)
 }
+
+//根据发消息人发来的消息提醒进入
+message.noticeMessage = function () {
+    let varNotify = null
+    while (varNotify == null) {
+      varNotify = id("ega").findOne(1000)
+    }
+    varNotify.parent().parent().parent().parent().parent().click()
+    sleep(1000)
+    //找到所有消息然后倒叙
+    console.show()
+    var allMessage = id("df3").find()
+    // for(i = 0;i<allMessage.size();i++){
+    //   console.log(allMessage.get(i).text())
+    // }
+    var allMessageNum = allMessage.size()
+    console.log(allMessage.get(allMessageNum - 1).text())
+    return allMessage.get(allMessageNum - 1).text()
+  }
 
 module.exports = message
