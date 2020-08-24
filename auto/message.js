@@ -38,28 +38,68 @@ message.findNameByHistoryList = function (name){
 message.sendMessage = function (text1){
     text("发送消息…").findOne().setText(text1)
     console.log("ok")
-    sleep(3000)
+    sleep(1000)
     console.log("点击发送")
     click(665,1241)
 }
 
-//根据发消息人发来的消息提醒进入
-message.noticeMessage = function () {
-    let varNotify = null
-    while (varNotify == null) {
-      varNotify = id("ega").findOne(1000)
-    }
-    varNotify.parent().parent().parent().parent().parent().click()
-    sleep(1000)
-    //找到所有消息然后倒叙
-    console.show()
-    var allMessage = id("df3").find()
-    // for(i = 0;i<allMessage.size();i++){
-    //   console.log(allMessage.get(i).text())
-    // }
-    var allMessageNum = allMessage.size()
-    console.log(allMessage.get(allMessageNum - 1).text())
-    return allMessage.get(allMessageNum - 1).text()
+
+
+// //根据发消息人发来的消息提醒进入
+// message.noticeMessage = function () {
+//     let varNotify = null
+//     while (varNotify == null) {
+//       varNotify = id("ega").findOne(1000)
+//     }
+//     varNotify.parent().parent().parent().parent().parent().click()
+//     sleep(1000)
+//     //找到所有消息然后倒叙
+//     console.show()
+//     var allMessage = id("df3").find()
+//     // for(i = 0;i<allMessage.size();i++){
+//     //   console.log(allMessage.get(i).text())
+//     // }
+//     var allMessageNum = allMessage.size()
+//     console.log(allMessage.get(allMessageNum - 1).text())
+
+//     var messagePayload = {
+//       fromUserName: 'bot',
+//       toUserName:"UserName",
+//       msgId:"123",
+//       content:allMessage.get(allMessageNum - 1).text()
+//     }
+//     var strMessagePayload = JSON.stringify(messagePayload)
+//     return strMessagePayload
+//   }
+
+
+  //根据发消息人发来的消息提醒进入
+  message.noticeMessage = function () {
+  let varNotify = null
+  while (varNotify == null) {
+    varNotify = id("ega").findOne(1000)
   }
+  varNotify.parent().parent().parent().parent().click()
+  sleep(1000)
+  //找到所有消息然后倒叙
+  console.show()
+  var allMessage = id("df3").find()
+  // for(i = 0;i<allMessage.size();i++){
+  //   console.log(allMessage.get(i).text())
+  // }
+  var allMessageNum = allMessage.size()
+  console.log(allMessage.get(allMessageNum - 1).text())
+
+  var messagePayload = {
+    fromUserName: 'bot',
+    toUserName:'UserName',
+    msgId:'1234',
+    content:allMessage.get(allMessageNum - 1).text()
+  }
+
+  var strmessagePayload = JSON.stringify(messagePayload)
+  return strmessagePayload
+}
+
 
 module.exports = message
